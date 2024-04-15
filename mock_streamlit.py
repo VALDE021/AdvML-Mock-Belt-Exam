@@ -14,15 +14,6 @@ with open(FILEPATHS_FILE) as f:
     FPATHS = json.load(f)
     
 # Define the load train or test data function with caching
-# @st.cache_data
-# def load_Xy_data(fpath):
-#     return joblib.load(fpath)
-    
-# @st.cache_resource
-# def load_model_ml(fpath):
-#     return joblib.load(fpath)
-
-
 @st.cache_data
 def load_Xy_data(fpath):
     train_path = fpath['data']['ml']['train']
@@ -67,14 +58,8 @@ st.sidebar.header("House Features")
 
 
 # Load training data
-# X_train, y_train = load_Xy_data(fpath=FPATHS['data']['ml']['train'])
-# # Load testing data
-# X_test, y_test = load_Xy_data(fpath=FPATHS['data']['ml']['test'])
-
 X_train, y_train, X_test, y_test = load_Xy_data(FPATHS)
 # # Load model
-# linreg = load_model_ml(fpath = FPATHS['models']['linear_regression'])
-
 linreg = load_model_ml(FPATHS)
 
 
