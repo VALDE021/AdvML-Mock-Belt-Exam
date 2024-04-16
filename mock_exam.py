@@ -49,14 +49,10 @@ def explain_instance(_explainer, _model_pipe, instance_to_explain):
                                              )
     return explanation
     
-### Start of App
-st.title('House Prices Prediction')
-st.image('images/house.jpeg')
-st.sidebar.header("House Features")
-# # Include the banner image
-# st.image(FPATHS['images']['banner'])
-
-
+# ### Start of App
+# st.title('House Prices Prediction')
+# st.image('images/house.jpeg')
+# st.sidebar.header("House Features")
 # Load training data
 X_train, y_train, X_test, y_test = load_Xy_data(FPATHS)
 # # Load model
